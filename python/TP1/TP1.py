@@ -3,7 +3,7 @@ ponctuations = set(":/;.?,-_^()\"*!")
 motbannis = "the and to a of she it I i in you her at on had all with but for so not as".split(" ")
 
 def read_fichier():
-    fichier = open("irit.fr_Philippe.Muller_alice_wonderland.utf8.txt",
+    fichier = open("/home/pandou/Documents/2A/python/TP1/irit.fr_~Philippe.Muller_alice_wonderland.utf8.conll.txt",
                    "r", encoding="utf-8")
     
     return fichier.read().lower()
@@ -30,7 +30,7 @@ def sort_dictionnaire(dic):
     return occurence
     
 def read_fichier_conll():
-    fichier = open("irit.fr_~Philippe.Muller_alice_wonderland.utf8.conll.txt",
+    fichier = open("/home/pandou/Documents/2A/python/TP1/irit.fr_~Philippe.Muller_alice_wonderland.utf8.conll.txt",
                    "r", encoding="utf-8")
     
     return fichier.read()
