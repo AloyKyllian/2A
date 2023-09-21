@@ -1,0 +1,7 @@
+etape1
+
+codage: afin de resoudre le probleme de coloration je recupere le nombre de couleur qu'on veut essayer d'appliquer et le nombre de sommets on appliquer une seule couleur par sommet puis je recupere les sommets adjacent de celui ci pour ajouter le fais de ne pas colorier ces sommets de la meme couleur. Nous effectuons ce travail sur tout les sommet ce qui nous donne une liste de liste qui repertore une formule que l'on peut verifier si elle est satisfiable
+1000 : sommet n
+difficulté : comprendre exactement ce qui etait demandé puis appliquer en programmation ce que l'on a vu en logique j'ai eu des diffuculté pour que le code sois modulable 
+
+resultat : 
