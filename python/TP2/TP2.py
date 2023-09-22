@@ -4,6 +4,12 @@ class Stack():
         self.pile=[]
         
 
+    def size(self):
+        return len(self.pile)
+    
+    def isEmpty(self):
+        return self.size()==0
+
     def getTete(self):
         return self.pile.pop()
 
@@ -26,24 +32,68 @@ class Graph():
     # def __init__(self,graphe):
     #     self.graphe={graphe}
 
+    def size(self):
+        return len(self.graphe)
 
 
-    def depth_first():
+    def isEmpty(self):
+        return self.size()==0
+
+    def succeseur(self,noeud):
+        if noeud in self.graphe.keys():
+            return self.graphe[noeud]
+
+
+    def depth_first(self,noeud_depart):
         '''itère sur les noeuds en profondeur d'abord, à partir d'un noeud donné'''
-        
-        pass
+        if noeud_depart not in self.graphe.keys():
+            return -1
+        liste=[]
+        pile=Stack()
+        pile.add(noeud_depart)
+        while(pile.isEmpty()==False):
+            noeud = pile.getTete()
+            liste.append(noeud)
+            #yield noeud
+            succ=self.succeseur(noeud)
+            for i in succ:
+                if i not in liste:
+                    pile.add(i)
+        return liste
 
 
-    def comp_con():
+
+    def comp_con(self):
         '''donne les composantes connexes'''
-        pass
+        comps=[]
+        for i in self.graphe :
+            comp = list(self.depth_first(i))
+            comp.sort()
+            if comp not in comps:
+                comps.append(comp)
+        return comps
 
 
-    def path():
+        
+
+
+    def path(self,noeud,noeud2):
         '''donne le plus court chemin d'un noeud à un autre (en nombre d'arcs/arête)'''
-        pass
+        if noeud in self.graphe.keys() and noeud2 in self.graphe.keys():
+                if noeud in graphe.depth_first(noeud2):
+                    trajet=0
+                    sommetbis=noeud2
+                    for sommet in graphe.depth_first(noeud2):
+                        
+                        if sommet != sommetbis and sommet not in self.succeseur(sommetbis):
+
+                    
+
+                        pass
 
     def ajouter_arc(self,sommet1,sommet2):
+        if sommet1 in self.graphe.keys() and sommet2 in self.graphe[sommet1]:
+            return -1
         if sommet1 in self.graphe.keys():
             self.graphe[sommet1].append(sommet2)
         else :
@@ -95,4 +145,24 @@ if __name__=="__main__":
 
     graphe.ajouter_arc(2,6)
 
+    graphe.ajouter_arc(2,8)
+
+    graphe.ajouter_arc(5,6)
+
+    graphe.ajouter_arc(5,9)
+
+    graphe.ajouter_arc(5,4)
+
+    graphe.ajouter_arc(5,7)
+
+    #graphe.ajouter_arc(1,2)
+
     graphe.affi_graphe()
+
+    for i in (graphe.depth_first(5)):
+        print(i)
+    print(list(graphe.depth_first(2)))
+
+    graphe.comp_con()
+
+    print(f"le tajet le plus court de 2 vers 5 est de : {graphe.path(2,5)}")
