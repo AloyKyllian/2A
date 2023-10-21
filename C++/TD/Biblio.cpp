@@ -41,8 +41,17 @@ Biblio &Biblio::operator=(Biblio &b)
 
 ostream &operator<<(ostream &out, Biblio &l)
 {
-    out << "valeur du tableau" << l.tableau_livre << endl;
     out << "taille" << l.taillemax << endl;
     out << "nbr d'element" << l.nbrelement << endl;
+    for (int i = 0; i < l.nbrelement; i++)
+    {
+        out << l.tableau_livre[i] << endl;
+    }
     return out;
+}
+
+void Biblio::ajouter_livre(Livre &l)
+{
+    this->tableau_livre[this->nbrelement] = l;
+    this->nbrelement++;
 }

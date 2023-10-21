@@ -1,4 +1,11 @@
-#include "Entree.h"
+class Entree
+{
+private:
+    /* data */
+public:
+    Entree(/* args */);
+    ~Entree();
+};
 
 Entree::Entree(/* args */)
 {
