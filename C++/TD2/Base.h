@@ -1,10 +1,15 @@
-using namespace std;
-
 class Base
 {
-private:
-    /* data */
 public:
-    Base(/* args */);
-    ~Base();
+    vitual void afficher() = 0;
+    virtual bool operator==(Base *) = 0;
+    virtual Base *clone() = 0;
 };
+class Point : public Base
+{
+    int x, y;
+
+public:
+    Point(int, int);
+    void afficher();
+}
