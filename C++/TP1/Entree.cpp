@@ -11,19 +11,19 @@ void Entree::Afficher()
     std::cout << "Numéro de téléphone : " << this->NumeroTelephone << std::endl;
 }
 
-std::ostream &operator<<(std::ostream &out, const Entree &entree)
+std::ostream &operator<<(std::ostream &out, Entree &entree)
 {
     out << "Nom : " << entree.Nom << std::endl;
     out << "Numéro de téléphone : " << entree.NumeroTelephone << std::endl;
     return out;
 }
 
-bool Entree::operator==(const Entree &autre) const
+bool Entree::operator==(Entree &autre)
 {
     return (Nom == autre.Nom && NumeroTelephone == autre.NumeroTelephone);
 }
 
-bool Entree::operator!=(const Entree &autre) const
+bool Entree::operator!=(Entree &autre)
 {
     return !(*this == autre);
 }
